@@ -21,6 +21,8 @@ body {
 }
 .gallery {
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   width: 1200px;
   list-style: none;
   flex-wrap: wrap;
@@ -48,7 +50,4 @@ body {
   width: 265px;
   height: 177px;
   object-fit: cover;
-}
-
-.load-more-btn {
 }
