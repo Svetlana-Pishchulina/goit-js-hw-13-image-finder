@@ -1,6 +1,6 @@
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
-import * as basicLightbox from 'basiclightbox';
+// import * as basicLightbox from 'basiclightbox';
 
 import './styles.css';
 import imageCardTpl from './tamplates/imageCardTpl.hbs';
@@ -8,12 +8,10 @@ import PicturesApiService from './apiService';
 import Button from './button';
 
 const searchFormEl = document.querySelector('.search-form');
-const loadMoreBtnEl = document.querySelector('.load-more-btn');
 const galleryEl = document.querySelector('.gallery');
 const btn = new Button('.load-more-btn');
 
 searchFormEl.addEventListener('submit', onSearch);
-// loadMoreBtnEl.addEventListener('click', fatchAndRenderPage);
 btn.btnEl.addEventListener('click', fatchAndRenderPage);
 
 const picturesApiService = new PicturesApiService();
@@ -63,8 +61,26 @@ function renderGallery({ hits }) {
     behavior: 'smooth',
     block: 'end',
   });
+
+  // document.querySelectorAll('.gallery-img').map(el =>
+  //   el.addEventListener('click', e => {
+  //     const ref = e.target.dataset.ref;
+  //     basicLightbox
+  //       .create(
+  //         `
+  //   <img src='${ref}' alt='${1}'>
+  //   `,
+  //       )
+  //       .show();
+  //   }),
+  // );
 }
 
-// 4.плагин модального окна, например basicLightbox
-// 4.плагин модального окна, например basicLightbox
-// 5.скролл???
+// galleryEl.addEventListener('click', onClick);
+// function onClick(e) {
+//   if (e.target.nodeName !== 'IMG') {
+//     return;
+//   }
+//   const ref = e.target.dataset.ref;
+//   const instance = basicLightbox.create(`<img src='${ref}' alt='${1}'>`).show();
+// }
