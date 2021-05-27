@@ -1,6 +1,6 @@
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
-// import * as basicLightbox from 'basiclightbox';
+import * as basicLightbox from 'basiclightbox';
 
 import './styles.css';
 import imageCardTpl from './tamplates/imageCardTpl.hbs';
@@ -76,11 +76,11 @@ function renderGallery({ hits }) {
   // );
 }
 
-// galleryEl.addEventListener('click', onClick);
-// function onClick(e) {
-//   if (e.target.nodeName !== 'IMG') {
-//     return;
-//   }
-//   const ref = e.target.dataset.ref;
-//   const instance = basicLightbox.create(`<img src='${ref}' alt='${1}'>`).show();
-// }
+galleryEl.addEventListener('click', onClick);
+function onClick(e) {
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+  const ref = e.target.dataset.ref;
+  const instance = basicLightbox.create(`<img src='${ref}' alt='${1}'>`).show();
+}
